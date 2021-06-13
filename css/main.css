@@ -1,0 +1,20 @@
+/*
+#eeebdd white
+#ce1212 red
+#810000 mahroon
+#1b1717 grey
+*/
+
+body {
+    background-color: #1b1717;
+    color: #fff;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+.centered {
+    display: table;
+    margin: 0 auto;
+}
