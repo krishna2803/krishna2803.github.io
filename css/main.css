@@ -5,6 +5,11 @@
 #1b1717 grey
 */
 
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('./fonts/*.ttf;');
+}
+
 body {
     background-color: #1b1717;
     color: #fff;
