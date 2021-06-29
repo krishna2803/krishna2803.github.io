@@ -1,6 +1,32 @@
+/* Rubik Google Font*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
+
+
+/* Custom scrollbar: */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(200, 215, 230, 0.2);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(200, 215, 230, 0.7);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(200, 215, 230);
+    border-radius: 2px;
+}
+
+/* Page Content: */
 .dark-background {
     background-color: #1b1717;
     color: #fff;
+    font-family: 'Rubik', sans-serif;
 }
 
 .card-container {
@@ -17,15 +43,20 @@
     display: table;
     margin: auto;
     
-    transition: background-color 0.7s ease-in-out, color 0.8s ease-in-out;
+    transition: background-color 0.6s ease-in-out, color 0.5s ease-in-out;
 
     padding: 5%;
 
-    border-radius: 5%;
+    border-radius: 20px;
 }
 
 h1.rect-card-text {
+    font-weight: normal;
     text-align: center;
+}
+
+h3.rect-card-text {
+    font-weight: lighter;
 }
 
 .rect-card-text::selection {
@@ -37,5 +68,5 @@ h1.rect-card-text {
     background-color: rgb(40,40,40);
     color: rgba(220, 220, 220, 1);
 
-    transition: background-color 0.7s ease-in-out, color 0.8s ease-in-out;
+    transition: background-color 0.5s ease-in-out, color 0.6s ease-in-out;
 }
