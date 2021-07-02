@@ -63,7 +63,7 @@ p::selection {
 
 .greetingText {
     font-weight: 300;
-    font-size: 8vmin;
+    font-size: 7vmin;
     text-align: center;
     margin: 0.5rem auto 0 auto;
 }
