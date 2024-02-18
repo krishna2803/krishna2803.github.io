@@ -28,6 +28,7 @@ fade in bullshit
         transform: translateX(0);
     }
 }
+
 /*
 some hacky way to do this 💀
 i swear to god i would have used variables
@@ -73,8 +74,10 @@ html {
 }
 
 body {
-    overflow-y: hidden; /* Hide vertical scrollbar */
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: hidden;
+    /* Hide vertical scrollbar */
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
     font-family: "JetBrains Mono", monospace;
     font-optical-sizing: auto;
     font-style: normal;
@@ -117,12 +120,6 @@ navbar
     height: 2.5rem;
 }
 
-@media (max-width: 767px) {
-    .navbar {
-        
-    }
-}
-
 .nav-container {
     display: flex;
     justify-content: flex-end;
@@ -148,6 +145,13 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #65e52c;
+}
+
+@media (max-width: 767px) {
+    .nav-container {
+        font-size: 0.6rem;
+        justify-content: center;
+    }
 }
 
 /*
@@ -187,7 +191,7 @@ main section
         transform: translateX(-100%);
     }
 
-/*
+    /*
 another dark magic fuckery
 total animation time = 5.6 seconds
 1 second is about 17.85% of this
@@ -313,8 +317,8 @@ skills section
     .skillset-container {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(6, 3rem);
-        margin: auto;
-        padding: 0.25rem;
+        margin: auto 3rem;
+        padding: 2rem;
     }
 }
 
@@ -334,13 +338,17 @@ skills section
 sine wave mock fuckery
 */
 @keyframes boing-boing {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
 }
+
 /*
 PI = 3.14159
 anim_time = 2 # seconds
@@ -349,18 +357,53 @@ delta = 2 * PI / n_items
 for i in range(1, n_items+1):
     print(f'.icon:nth-child({i}) img {{ animation-delay: {delta * i:2.2}s; }}')
 */
-.icon:nth-child(1) img { animation-delay: 0.52s; }
-.icon:nth-child(2) img { animation-delay: 1.0s; }
-.icon:nth-child(3) img { animation-delay: 1.6s; }
-.icon:nth-child(4) img { animation-delay: 2.1s; }
-.icon:nth-child(5) img { animation-delay: 2.6s; }
-.icon:nth-child(6) img { animation-delay: 3.1s; }
-.icon:nth-child(7) img { animation-delay: 3.7s; }
-.icon:nth-child(8) img { animation-delay: 4.2s; }
-.icon:nth-child(9) img { animation-delay: 4.7s; }
-.icon:nth-child(10) img { animation-delay: 5.2s; }
-.icon:nth-child(11) img { animation-delay: 5.8s; }
-.icon:nth-child(12) img { animation-delay: 6.3s; }
+.icon:nth-child(1) img {
+    animation-delay: 0.52s;
+}
+
+.icon:nth-child(2) img {
+    animation-delay: 1.0s;
+}
+
+.icon:nth-child(3) img {
+    animation-delay: 1.6s;
+}
+
+.icon:nth-child(4) img {
+    animation-delay: 2.1s;
+}
+
+.icon:nth-child(5) img {
+    animation-delay: 2.6s;
+}
+
+.icon:nth-child(6) img {
+    animation-delay: 3.1s;
+}
+
+.icon:nth-child(7) img {
+    animation-delay: 3.7s;
+}
+
+.icon:nth-child(8) img {
+    animation-delay: 4.2s;
+}
+
+.icon:nth-child(9) img {
+    animation-delay: 4.7s;
+}
+
+.icon:nth-child(10) img {
+    animation-delay: 5.2s;
+}
+
+.icon:nth-child(11) img {
+    animation-delay: 5.8s;
+}
+
+.icon:nth-child(12) img {
+    animation-delay: 6.3s;
+}
 
 .icon img:hover {
     scale: 1.1;
@@ -381,7 +424,7 @@ projects section
     .card-container {
         display: flex;
         flex-wrap: wrap;
-        gap: 3rem;
+        gap: 1rem;
         justify-content: center;
         align-items: center;
         flex-direction: column;
@@ -403,6 +446,18 @@ projects section
     width: 20rem;
     height: 25rem;
 }
+
+@media (max-width: 767px) {
+    .card {
+        width: 13rem;
+        height: 11rem;
+    }
+    .card:hover {
+        width: 16rem;
+        height: 32rem;
+    }
+}
+
 
 .card-content {
     padding: 2rem;
@@ -492,7 +547,10 @@ textarea {
 }
 
 @media (max-width: 767) {
-    input#name, input[type="text"], textarea {
+
+    input#name,
+    input[type="text"],
+    textarea {
         width: 10rem;
     }
 }
