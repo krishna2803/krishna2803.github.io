@@ -18,7 +18,7 @@
 
 <body>
     <!-- UGGHhh!!!! -->
-    <div id="top"></div>
+    <!--<div id="top"></div> <!-- I FUNKIGG HATE THISS SHITTT-->
     <header>
         <div class="navbar">
             <div class="nav-container">
@@ -44,16 +44,23 @@
     </main>
 
     <section id="about">
-        <h2 class="hero glitch layers" data-text="< about >"><span>&lt; about &gt;</span></h2>
+        <div class="center-a-div">
+            <h2 class="hero glitch layers" data-text="< about >"><span>&lt; about &gt;</span></h2>
+        </div>
+
         <p>
-            Hello! I'm Krishna Pandey, a first year student at IIT-Roorkee pursuing B.Tech degree
+            Hello! I'm Krishna Pandey, a first year student at <span class="dashed-underline">IIT-Roorkee</span>  pursuing B.Tech degree
             in Chemical Engineering. I have always been enthusiastic about mathematics,
             physics and computer science. I am a beginner at guitar y puedo hablar un poco español.
         </p>
     </section>
 
     <section id="skills">
-        <h2 class="hero glitch layers" data-text="< skills >"><span>&lt; skills &gt;</span></h2>
+
+        <div class="center-a-div">
+            <h2 class="hero glitch layers" data-text="< skills >"><span>&lt; skills &gt;</span></h2>
+        </div>
+
         <div class="skillset-container">
             <div class="icon"><img src="assets/img/icons/c.png" alt="C"></div>
             <div class="icon"><img src="assets/img/icons/cpp.png" alt="C++"></div>
@@ -72,26 +79,64 @@
 
     <!-- Hours wasted: 5 -->
     <section id="projects">
-        <h2 class="hero glitch layers" data-text="< projects >"><span>&lt; projects &gt;</span></h2>
-        <ul>
+        <div class="center-a-div">
+            <h2 class="hero glitch layers" data-text="< projects >"><span>&lt; projects &gt;</span></h2>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-content">
+                    <h2>Snake Game (OpenGL 4.6)</h2>
+                    <p class="description">Implemented the renowned snake game entirely in C, leveraging OpenGL 4.6 as the backend framework. Employed Direct State Access (DSA) to streamline the buffer creation process, enhancing efficiency and performance</p>
+                    <a href="https://github.com/krishna2803/Snake-GL">click to view source</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2>A* Path Finding (Java)</h2>
+                    <p class="description">Developed Java app for grid exploration, updating costs and parent nodes for efficient navigation. Utilized object-oriented principles for scalability.</p>
+                    <a href="https://github.com/krishna2803/A-Star-Pathfinding-Java">click to view source</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2>Eric (Flutter)</h2>
+                    <p class="description">Developed 'Eric,' an e-rickshaw booking app using Flutter and Firebase. Streamlined campus travel, automated payments, and optimized route planning for increased efficiency and revenue generation.</p>
+                    <a href="https://github.com/krishna2803/eric">click to view source</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2>Music/Audio Downloader (Selenium)</h2>
+                    <p class="description">Enhanced user accessibility by enabling mp3 downloads from YouTube videos via a dedicated website, streamlining the process for seamless audio acquisition.</p>
+                    <a>source coming soon!</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- <ul>
             <li>A Star Path Finding Implementation in Java</li>
             <li>Snake Game based on OpenGL 4.6 in pure C</li>
             <li>Eric, E-Rickshaw ridesharing app for syntax error </li>
-        </ul>
+        </ul> -->
     </section>
 
     <section id="contact-me">
-        <h2 class="hero glitch layers" data-text="< contect me >"><span>&lt; contact me &gt;</span></h2>
+
+        <div class="center-a-div">
+            <h2 class="hero glitch layers" data-text="< contact me >"><span>&lt; contact me &gt;</span></h2>
+        </div>
         <div class="contact-container">
             <form class="contact-form">
                 <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="name">
+                    <input class="fuck-you-in-particular-input-box" type="text" id="name" name="name" placeholder="name">
                 </div>
                 <div class="form-group">
                     <input type="email" id="email" name="email" placeholder="email@example.com">
                 </div>
                 <div class="form-group">
-                    <textarea id="message" name="message" placeholder="message"></textarea>
+                    <textarea id="message" name="message" placeholder="message" rows="10"></textarea>
                 </div>
                 <button type="submit"">Submit</button>
         </form>

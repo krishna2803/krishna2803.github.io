@@ -2,6 +2,17 @@
     --dark-background-colour: rgb(36, 36, 36);
 }
 
+/*
+misc
+*/
+.center-a-div {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -12,6 +23,10 @@ html {
     text-rendering: optimizeLegibility;
 }
 
+::selection {
+    background: rgba(255, 255, 255, 0.1);
+}
+
 body {
     font-family: "JetBrains Mono", monospace;
     font-optical-sizing: auto;
@@ -20,7 +35,27 @@ body {
     color: #FFF;
     overflow-y: overlay;
     scrollbar-gutter: stable;
+    margin-top: 0;
+    padding-top: 0;
 }
+
+/*
+scrollbar
+*/
+body::-webkit-scrollbar {
+    width: 1rem;
+    overflow: overlay;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
 
 /*
 navbar
@@ -63,18 +98,59 @@ nav ul li a:hover {
 /*
 main section
 */
-#hey, #name, #caption {
+#hey,
+#name,
+#caption {
     margin: 0;
     text-align: center;
 }
 
+#hey,
+#name {
+    font-size: 10vmin;
+}
+
+@media (max-width: 767px) {
+
+    #hey,
+    #name {
+        font-size: 5vmin;
+    }
+}
+
 #hey {
-    margin-top: 5rem;
+    margin-top: 32vmin;
+}
+
+#caption {
+    font-size: 6vmin;
+    margin-bottom: 32vmin;
+}
+@media (max-width: 767px) {
+    
+#caption {
+    font-size: 3.5vmin;
+    margin-bottom: 32vmin;
+}
+}
+
+    #about p {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+@media (max-width: 767px) {
+    #about p {
+        text-align: center;
+        font-size: 1.5rem;
+    }
 }
 
 
 footer {
     text-align: center;
+    font-size: 1.5rem;
+    color: gray;
     padding: 1rem;
     margin: auto;
 }
@@ -86,9 +162,17 @@ skills section
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 3rem);
-    gap: 2rem;
+    gap: 3rem;
     padding: 0.2rem;
     margin: auto 20rem;
+}
+
+@media (max-width: 767px) {
+    .skillset-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 3rem);
+        margin: auto;
+    }
 }
 
 .icon {
@@ -98,28 +182,81 @@ skills section
 }
 
 .icon img {
-    width: 64px;
-    height: 64px;
+    width: 72px;
+    height: 72px;
+}
+
+/*
+projects section
+*/
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: auto;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.card {
+    width: 15rem;
+    height: 12rem;
+    color: #55ff00;
+    background-color: #0a1405;
+    border-radius: 10%;
+    overflow: hidden;
+    transition: width 0.25s ease-in-out, height 0.25s ease-in-out;
+}
+
+.card:hover {
+    width: 20rem;
+    height: 25rem;
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.card-content h2 {
+    margin-bottom: 2rem;
+}
+
+.description {
+    opacity: 0;
+    color: white;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.card:hover .description {
+    opacity: 1;
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit;
 }
 
 
 /*
 form
 */
-input, textarea, button {
+input,
+textarea,
+button {
     font-family: inherit;
     font-size: inherit;
     text-align: left;
     background-color: var(--dark-background-colour);
     color: #0f0;
 }
+
 *::placeholder {
     text-align: left;
     color: #FFF;
 }
+
 .contact-container {
     max-width: 25rem;
-    margin: 3rem auto;
+    margin: 1.5rem auto;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -137,30 +274,44 @@ input, textarea, button {
 }
 
 input[type="text"],
-input[type="email"], textarea {
+/* WHY THE FUCK DOES THIS NOT CHANGE THE FONT SIZE!!???*/
+input[type="email"] {
     width: 20rem;
     height: 2.5rem;
     border: 1px solid white;
     text-align: left;
+    font-size: 1rem;
 }
+
+input#name {
+    font-size: 1rem;
+    text-align: left;
+}
+
 textarea {
-    height: 7.5 rem;
-    resize: vertical;
+    width: 20rem;
+    border: 1px solid white;
+    text-align: left;
+    font-size: 1rem;
+    height: 9 rem;
+    resize: none;
     max-height: 15rem;
+    margin-bottom: 2rem;
 }
 
 button[type="submit"] {
-    width: 5rem;
+    width: 6rem;
     cursor: pointer;
     border: none;
     outline: none;
     padding: 10px 15px;
     font-weight: bold;
+    text-align: center;
 
     position: relative;
     background-color: #fff;
     color: black;
-    isolation: isolate; /* If ommitted, child pseudo element will be stacked behind */
+    isolation: isolate;
 }
 
 button[type="submit"]::before {
