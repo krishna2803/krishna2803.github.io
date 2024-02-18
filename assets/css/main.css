@@ -3,6 +3,46 @@
 }
 
 /*
+fade in bullshit
+*/
+#caption {
+    width: 100%;
+    overflow: hidden;
+}
+
+.left-fade,
+.bottom-fade,
+.right-fade {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.left-fade {
+    animation-delay: 3.0s;
+}
+
+.bottom-fade {
+    animation-delay: 3.8s;
+}
+
+.right-fade {
+    animation-delay: 4.6s;
+}
+
+
+/*
 misc
 */
 .center-a-div {
@@ -43,7 +83,7 @@ body {
 scrollbar
 */
 body::-webkit-scrollbar {
-    width: 1rem;
+    width: 0.5rem;
     overflow: overlay;
 }
 
@@ -53,7 +93,9 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background-color: rgba(255, 255, 255, 0.6);
+    background: #007bff;
+    /*FUCK YOU!*/
+    background: linear-gradient(to bottom, #0f0, #afa);
 }
 
 
@@ -99,21 +141,94 @@ nav ul li a:hover {
 main section
 */
 #hey,
-#name,
 #caption {
     margin: 0;
     text-align: center;
 }
 
-#hey,
-#name {
+#hey {
     font-size: 10vmin;
+}
+
+#hey .greet {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 0.5s;
+}
+
+#hey .meet {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 1.5s;
+}
+
+#hey .myname {
+    opacity: 0;
+    animation: fadeInTheOtherOne 5.6s ease-in forwards;
+    animation-delay: 1.5s;
+}
+
+
+@keyframes fadeInTheOtherOne {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    17.85% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    80% {
+        opacity: 1;
+        color: white;
+    }
+
+    100% {
+        opacity: 1;
+        color: #0f0;
+    }
+}
+
+p .myname {
+    animation: fadeInColour 1s ease-in forwards;
+    animation-delay: 8s;
+}
+
+p .college {
+    animation: fadeInColour 1s ease-in forwards;
+    animation-delay: 9s;
+}
+
+p .btech {
+    animation: fadeInColour 1s ease-in forwards;
+    animation-delay: 10s;
+}
+
+p .chem {
+    animation: fadeInColour 1s ease-in forwards;
+    animation-delay: 11s;
+}
+
+@keyframes fadeInColour {
+    from {
+        color: white;
+    }
+
+    to {
+        color: #0f0;
+    }
+}
+
+p .spanish {
+    animation: fadeInColour 1s ease-in forwards;
+    animation-delay: 12s;
 }
 
 @media (max-width: 767px) {
 
-    #hey,
-    #name {
+    #hey {
         font-size: 5vmin;
     }
 }
@@ -126,18 +241,20 @@ main section
     font-size: 6vmin;
     margin-bottom: 32vmin;
 }
+
 @media (max-width: 767px) {
-    
-#caption {
-    font-size: 3.5vmin;
-    margin-bottom: 32vmin;
-}
+
+    #caption {
+        font-size: 3.5vmin;
+        margin-bottom: 32vmin;
+    }
+
 }
 
-    #about p {
-        text-align: center;
-        font-size: 2rem;
-    }
+#about p {
+    text-align: center;
+    font-size: 2rem;
+}
 
 @media (max-width: 767px) {
     #about p {
@@ -196,6 +313,18 @@ projects section
     justify-content: space-evenly;
     flex-direction: row;
 }
+
+@media (max-width: 767px) {
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
 
 .card {
     width: 15rem;
