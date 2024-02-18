@@ -28,7 +28,12 @@ fade in bullshit
         transform: translateX(0);
     }
 }
-
+/*
+some hacky way to do this 💀
+i swear to god i would have used variables
+if they weren't as verbose as they are
+make me wanna game end myself
+*/
 .left-fade {
     animation-delay: 3.0s;
 }
@@ -68,6 +73,8 @@ html {
 }
 
 body {
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
     font-family: "JetBrains Mono", monospace;
     font-optical-sizing: auto;
     font-style: normal;
@@ -94,7 +101,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     border-radius: 0;
     background: #007bff;
-    /*FUCK YOU!*/
+    /*FUCK THIS SHIT!! FIREFOX IS NOT WEBKIT BASED?????!*/
     background: linear-gradient(to bottom, #0f0, #afa);
 }
 
@@ -110,6 +117,12 @@ navbar
     height: 2.5rem;
 }
 
+@media (max-width: 767px) {
+    .navbar {
+        
+    }
+}
+
 .nav-container {
     display: flex;
     justify-content: flex-end;
@@ -123,7 +136,7 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 1.5rem;
 }
 
 
@@ -147,7 +160,7 @@ main section
 }
 
 #hey {
-    font-size: 10vmin;
+    font-size: 5rem;
 }
 
 #hey .greet {
@@ -168,13 +181,17 @@ main section
     animation-delay: 1.5s;
 }
 
-
 @keyframes fadeInTheOtherOne {
     0% {
         opacity: 0;
         transform: translateX(-100%);
     }
 
+/*
+another dark magic fuckery
+total animation time = 5.6 seconds
+1 second is about 17.85% of this
+*/
     17.85% {
         opacity: 1;
         transform: translateX(0);
@@ -226,21 +243,29 @@ p .spanish {
     animation-delay: 12s;
 }
 
-@media (max-width: 767px) {
-
-    #hey {
-        font-size: 5vmin;
-    }
-}
 
 #hey {
     margin-top: 32vmin;
 }
 
 #caption {
-    font-size: 6vmin;
+    font-size: 3rem;
     margin-bottom: 32vmin;
 }
+
+@media (max-width: 767px) {
+
+    #hey {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    #caption {
+        font-size: 2rem;
+    }
+}
+
 
 @media (max-width: 767px) {
 
@@ -259,7 +284,7 @@ p .spanish {
 @media (max-width: 767px) {
     #about p {
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -289,6 +314,7 @@ skills section
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(6, 3rem);
         margin: auto;
+        padding: 0.25rem;
     }
 }
 
@@ -301,6 +327,43 @@ skills section
 .icon img {
     width: 72px;
     height: 72px;
+    animation: boing-boing 2s linear infinite;
+}
+
+/*
+sine wave mock fuckery
+*/
+@keyframes boing-boing {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+/*
+PI = 3.14159
+anim_time = 2 # seconds
+n_items = 12
+delta = 2 * PI / n_items
+for i in range(1, n_items+1):
+    print(f'.icon:nth-child({i}) img {{ animation-delay: {delta * i:2.2}s; }}')
+*/
+.icon:nth-child(1) img { animation-delay: 0.52s; }
+.icon:nth-child(2) img { animation-delay: 1.0s; }
+.icon:nth-child(3) img { animation-delay: 1.6s; }
+.icon:nth-child(4) img { animation-delay: 2.1s; }
+.icon:nth-child(5) img { animation-delay: 2.6s; }
+.icon:nth-child(6) img { animation-delay: 3.1s; }
+.icon:nth-child(7) img { animation-delay: 3.7s; }
+.icon:nth-child(8) img { animation-delay: 4.2s; }
+.icon:nth-child(9) img { animation-delay: 4.7s; }
+.icon:nth-child(10) img { animation-delay: 5.2s; }
+.icon:nth-child(11) img { animation-delay: 5.8s; }
+.icon:nth-child(12) img { animation-delay: 6.3s; }
+
+.icon img:hover {
+    scale: 1.1;
 }
 
 /*
@@ -428,6 +491,12 @@ textarea {
     margin-bottom: 2rem;
 }
 
+@media (max-width: 767) {
+    input#name, input[type="text"], textarea {
+        width: 10rem;
+    }
+}
+
 button[type="submit"] {
     width: 6rem;
     cursor: pointer;
@@ -474,4 +543,5 @@ contacts section
     width: 48px;
     height: 48px;
     margin: 0 1rem;
+    animation: none;
 }

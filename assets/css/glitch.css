@@ -9,6 +9,13 @@
     filter: drop-shadow(0 1px 3px);
 }
 
+
+@media (max-width: 767px) {
+    .hero {
+        font-size: 2.25rem;
+    }
+}
+
 .layers {
     position: relative;
 }
