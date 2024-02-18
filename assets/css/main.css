@@ -29,12 +29,7 @@ fade in bullshit
     }
 }
 
-/*
-some hacky way to do this 💀
-i swear to god i would have used variables
-if they weren't as verbose as they are
-make me wanna game end myself
-*/
+
 .left-fade {
     animation-delay: 3.0s;
 }
@@ -75,9 +70,7 @@ html {
 
 body {
     overflow-y: hidden;
-    /* Hide vertical scrollbar */
     overflow-x: hidden;
-    /* Hide horizontal scrollbar */
     font-family: "JetBrains Mono", monospace;
     font-optical-sizing: auto;
     font-style: normal;
@@ -104,7 +97,6 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     border-radius: 0;
     background: #007bff;
-    /*FUCK THIS SHIT!! FIREFOX IS NOT WEBKIT BASED?????!*/
     background: linear-gradient(to bottom, #0f0, #afa);
 }
 
@@ -118,6 +110,7 @@ navbar
     position: fixed;
     width: 100%;
     height: 2.5rem;
+    z-index: 1;
 }
 
 .nav-container {
@@ -149,8 +142,9 @@ nav ul li a:hover {
 
 @media (max-width: 767px) {
     .nav-container {
-        font-size: 0.6rem;
+        font-size: 2vw;
         justify-content: center;
+        width: 100%;
     }
 }
 
@@ -190,12 +184,6 @@ main section
         opacity: 0;
         transform: translateX(-100%);
     }
-
-    /*
-another dark magic fuckery
-total animation time = 5.6 seconds
-1 second is about 17.85% of this
-*/
     17.85% {
         opacity: 1;
         transform: translateX(0);
@@ -349,60 +337,12 @@ sine wave mock fuckery
     }
 }
 
-/*
-PI = 3.14159
-anim_time = 2 # seconds
-n_items = 12
-delta = 2 * PI / n_items
-for i in range(1, n_items+1):
-    print(f'.icon:nth-child({i}) img {{ animation-delay: {delta * i:2.2}s; }}')
-*/
-.icon:nth-child(1) img {
-    animation-delay: 0.52s;
+.icon:nth-child(odd) img {
+    animation-delay: 0.5s;
 }
 
-.icon:nth-child(2) img {
+.icon:nth-child(even) img {
     animation-delay: 1.0s;
-}
-
-.icon:nth-child(3) img {
-    animation-delay: 1.6s;
-}
-
-.icon:nth-child(4) img {
-    animation-delay: 2.1s;
-}
-
-.icon:nth-child(5) img {
-    animation-delay: 2.6s;
-}
-
-.icon:nth-child(6) img {
-    animation-delay: 3.1s;
-}
-
-.icon:nth-child(7) img {
-    animation-delay: 3.7s;
-}
-
-.icon:nth-child(8) img {
-    animation-delay: 4.2s;
-}
-
-.icon:nth-child(9) img {
-    animation-delay: 4.7s;
-}
-
-.icon:nth-child(10) img {
-    animation-delay: 5.2s;
-}
-
-.icon:nth-child(11) img {
-    animation-delay: 5.8s;
-}
-
-.icon:nth-child(12) img {
-    animation-delay: 6.3s;
 }
 
 .icon img:hover {
@@ -434,10 +374,10 @@ projects section
 
 .card {
     width: 15rem;
-    height: 12rem;
+    height: 15rem;
     color: #55ff00;
     background-color: #0a1405;
-    border-radius: 10%;
+    border-radius: 2rem;
     overflow: hidden;
     transition: width 0.25s ease-in-out, height 0.25s ease-in-out;
 }
@@ -450,11 +390,11 @@ projects section
 @media (max-width: 767px) {
     .card {
         width: 13rem;
-        height: 11rem;
+        height: 13rem;
     }
     .card:hover {
         width: 16rem;
-        height: 32rem;
+        height: 28rem;
     }
 }
 
@@ -521,13 +461,14 @@ button {
 }
 
 input[type="text"],
-/* WHY THE FUCK DOES THIS NOT CHANGE THE FONT SIZE!!???*/
 input[type="email"] {
+    padding-left: 1rem;
     width: 20rem;
     height: 2.5rem;
     border: 1px solid white;
     text-align: left;
     font-size: 1rem;
+    outline: none;
 }
 
 input#name {
@@ -535,7 +476,15 @@ input#name {
     text-align: left;
 }
 
+/* When the input field is focused */
+input#name:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #0f0; /* Change border color to green */
+}
+
+
 textarea {
+    padding-left: 1rem;
+    padding-top: 1rem;
     width: 20rem;
     border: 1px solid white;
     text-align: left;
@@ -544,10 +493,11 @@ textarea {
     resize: none;
     max-height: 15rem;
     margin-bottom: 2rem;
+    outline: none;
 }
 
-@media (max-width: 767) {
 
+@media (max-width: 767) {
     input#name,
     input[type="text"],
     textarea {
@@ -563,7 +513,6 @@ button[type="submit"] {
     padding: 10px 15px;
     font-weight: bold;
     text-align: center;
-
     position: relative;
     background-color: #fff;
     color: black;
