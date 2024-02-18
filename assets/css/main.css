@@ -1,98 +1,119 @@
-/* Rubik Google Font*/
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap');
-/* Custom scrollbar: */
-::-webkit-scrollbar {
-    width: 10px;
+:root {
+    --dark-background-colour: rgb(15, 17, 18);
 }
 
-/* ::-webkit-scrollbar-track {
-    background: rgba(200, 215, 230, 0.2);
-    border-radius: 2px;
-} */
-
-::-webkit-scrollbar-thumb {
-    background: rgba(200, 215, 230, 0.7);
-    border-radius: 10px;
+html {
+    scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(200, 215, 230);
+* {
+    inset: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
 }
 
-ul.nav-bar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-li.nav-bar { 
-    float: right;
-}
-li.nav-bar a {
-    color: white;
-}
-li.nav-bar a {
-    display: flex;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-
-    font-weight: 100;
-
-    text-decoration: none;
-    color: white;
-    transition: color 0.25s ease-in-out;
-}
-
-li.nav-bar a:hover {
-    color: #3df803;
-}
-
-li.nav-bar a {
-    user-select: none;
-   -webkit-user-select: none;
-   -khtml-user-select: none;
-   -moz-user-select: none;
-   -ms-user-select: none;
-}
-
-@media only screen and (max-width: 700px) {
-    li.nav-bar {
-        display: none;
-    }
-}
-
-/* Obligatory fancy dark theme */
 body {
-    background-color: #1b1717;
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: var(--dark-background-colour);
+    color: #FFF;
+    overflow-y: overlay;
+    scrollbar-gutter: stable;
+}
+
+/*
+navbar
+*/
+.navbar {
     color: #fff;
-    font-family: 'Rubik', sans-serif;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
 }
 
-p::selection {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
+.nav-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--dark-background-colour);
 }
 
-.center {
-    display: block;
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.1s ease-out;
+}
+
+nav ul li a:hover {
+    color: #65e52c;
+}
+
+/*
+main section
+*/
+#hey, #name, #caption {
+    margin: 0;
+    text-align: center;
+}
+
+#hey {
+    margin-top: 5rem;
+}
+
+
+footer {
+    text-align: center;
+    padding: 1rem;
     margin: auto;
-    text-align: center;
 }
 
-.greetingText {
-    font-weight: 400;
-    font-size: 8vmin;
-    text-align: center;
-    margin: 6vmin auto 0 auto;
+/*
+form
+*/
+
+/*
+contacts section
+*/
+#contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.subtitle-text {
-    font-weight: 300;
-    font-size: 4.25vmin;
-    text-align: center;
-    margin: 0 auto;
+.icon {
+    width: 40px;
+    height: 40px;
+    margin: 0.5rem 1.2rem;
+    background-size: cover;
+}
+
+.icon:hover {
+    background: #65e52c;
+}
+
+.instagram {
+    background-image: url("../img/icons/instagram.png");
+}
+
+.twitter {
+    background-image: url("../img/icons/instagram.png");
+}
+
+.github {
+    background-image: url("../img/icons/instagram.png");
+}
+
+.email {
+    background-image: url("../img/icons/instagram.png");
 }
