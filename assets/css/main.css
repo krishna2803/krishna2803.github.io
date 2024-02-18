@@ -1,5 +1,5 @@
 :root {
-    --dark-background-colour: rgb(15, 17, 18);
+    --dark-background-colour: rgb(36, 36, 36);
 }
 
 html {
@@ -30,6 +30,7 @@ navbar
     overflow: hidden;
     position: fixed;
     width: 100%;
+    height: 2.5rem;
 }
 
 .nav-container {
@@ -79,8 +80,104 @@ footer {
 }
 
 /*
+skills section
+*/
+.skillset-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 3rem);
+    gap: 2rem;
+    padding: 0.2rem;
+    margin: auto 20rem;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon img {
+    width: 64px;
+    height: 64px;
+}
+
+
+/*
 form
 */
+input, textarea, button {
+    font-family: inherit;
+    font-size: inherit;
+    text-align: left;
+    background-color: var(--dark-background-colour);
+    color: #0f0;
+}
+*::placeholder {
+    text-align: left;
+    color: #FFF;
+}
+.contact-container {
+    max-width: 25rem;
+    margin: 3rem auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    margin-top: 1rem;
+}
+
+input[type="text"],
+input[type="email"], textarea {
+    width: 20rem;
+    height: 2.5rem;
+    border: 1px solid white;
+    text-align: left;
+}
+textarea {
+    height: 7.5 rem;
+    resize: vertical;
+    max-height: 15rem;
+}
+
+button[type="submit"] {
+    width: 5rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    font-weight: bold;
+
+    position: relative;
+    background-color: #fff;
+    color: black;
+    isolation: isolate; /* If ommitted, child pseudo element will be stacked behind */
+}
+
+button[type="submit"]::before {
+    content: "";
+    position: absolute;
+    background-color: #0f0;
+    top: 0;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    transition: right 200ms ease-in-out;
+    z-index: -1;
+}
+
+button[type="submit"]:hover::before {
+    right: 0;
+}
 
 /*
 contacts section
@@ -89,31 +186,12 @@ contacts section
     display: flex;
     justify-content: center;
     align-items: center;
+    inset: 0;
 }
 
-.icon {
-    width: 40px;
-    height: 40px;
-    margin: 0.5rem 1.2rem;
-    background-size: cover;
-}
 
-.icon:hover {
-    background: #65e52c;
-}
-
-.instagram {
-    background-image: url("../img/icons/instagram.png");
-}
-
-.twitter {
-    background-image: url("../img/icons/instagram.png");
-}
-
-.github {
-    background-image: url("../img/icons/instagram.png");
-}
-
-.email {
-    background-image: url("../img/icons/instagram.png");
+#contacts .icon img {
+    width: 48px;
+    height: 48px;
+    margin: 0 1rem;
 }

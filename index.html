@@ -8,6 +8,7 @@
     <link rel="icon" sizes="256x256" href="./assets/img/k_final.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/glitch.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
@@ -43,35 +44,35 @@
     </main>
 
     <section id="about">
-        <h1>&lt; about &gt;</h1>
+        <h2 class="hero glitch layers" data-text="< about >"><span>&lt; about &gt;</span></h2>
         <p>
-            Hello! I'm Krishna Pandey, a student at IIT-Roorkee pursuint my B.Tech degree
+            Hello! I'm Krishna Pandey, a first year student at IIT-Roorkee pursuing B.Tech degree
             in Chemical Engineering. I have always been enthusiastic about mathematics,
-            physics and computer science. I am a beginner at guitar and can speak un poco spanish ;)
+            physics and computer science. I am a beginner at guitar y puedo hablar un poco español.
         </p>
     </section>
 
     <section id="skills">
-        <h1>&lt; skills &gt;</h1>
-        Having a great amout of programming experience, I'm fairly proficient in the following languages and
-        technologies.
-        <!-- TODO Insert Icons-->
-        <ul>
-            <li>C, C++</li>
-            <li>Java</li>
-            <li>HTML, CSS, JS</li>
-            <li>C#</li>
-            <li>Rust</li>
-            <li>OpenGL</li>
-            <li>Processing</li>
-            <li>Box2D</li>
-            <li>Flutter</li>
-        </ul>
+        <h2 class="hero glitch layers" data-text="< skills >"><span>&lt; skills &gt;</span></h2>
+        <div class="skillset-container">
+            <div class="icon"><img src="assets/img/icons/c.png" alt="C"></div>
+            <div class="icon"><img src="assets/img/icons/cpp.png" alt="C++"></div>
+            <div class="icon"><img src="assets/img/icons/cs.png" alt="C#"></div>
+            <div class="icon"><img src="assets/img/icons/java.png" alt="java"></div>
+            <div class="icon"><img src="assets/img/icons/html5.png" alt="html5"></div>
+            <div class="icon"><img src="assets/img/icons/css.png" alt="css"></div>
+            <div class="icon"><img src="assets/img/icons/js.png" alt="js"></div>
+            <div class="icon"><img src="assets/img/icons/rust.png" alt="rust"></div>
+            <div class="icon"><img src="assets/img/icons/opengl.png" alt="OpenGl"></div>
+            <div class="icon"><img src="assets/img/icons/processing.png" alt="processing"></div>
+            <div class="icon"><img src="assets/img/icons/box2d.png" alt="box2d"></div>
+            <div class="icon"><img src="assets/img/icons/archlinux.png" alt="arch"></div>
+        </div>
     </section>
 
     <!-- Hours wasted: 5 -->
     <section id="projects">
-        <h1>&lt; projects &gt;</h1>
+        <h2 class="hero glitch layers" data-text="< projects >"><span>&lt; projects &gt;</span></h2>
         <ul>
             <li>A Star Path Finding Implementation in Java</li>
             <li>Snake Game based on OpenGL 4.6 in pure C</li>
@@ -80,35 +81,46 @@
     </section>
 
     <section id="contact-me">
-        <h1>&lt; contact me &gt;</h1>
-        <!-- <div class="contact-container">
+        <h2 class="hero glitch layers" data-text="< contect me >"><span>&lt; contact me &gt;</span></h2>
+        <div class="contact-container">
             <form class="contact-form">
                 <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" placeholder="name">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" placeholder="email@example.com">
                 </div>
                 <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <textarea id="message" name="message" placeholder="message"></textarea>
                 </div>
                 <button type="submit"">Submit</button>
         </form>
-        </div> -->
+        </div>
     </section>
 
     <footer>
         <h6>developed by @krishna2803</h6>
-        <div id=" contacts">
-            <a href="#about" class="icon email"></a>
-            <a href="#" class="icon github"></a>
-            <a href="#" class="icon twitter"></a>
-            <a href="#" class="icon instagram"></a>
+        <div id="contacts">
+                    <div class="icon">
+                        <a href="mailto:kpandey81930@gmail.com">
+                            <img src="assets/img/icons/communication.png" alt="mail">
+                        </a>
+                    </div>
+                    <a href="https://github.com/krishna2803">
+                        <div class="icon"><img src="assets/img/icons/github.png" alt="github">
+                    </a>
+                    <div class="icon">
+                        <a href="https://www.linkedin.com/in/krishna2303/">
+                            <img src="assets/img/icons/linkedin.png" alt="linkedin">
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://discordapp.com/users/503934699631017984">
+                            <img src="assets/img/icons/discord.png" alt="discord">
+                        </a>
+                    </div>
         </div>
-    </footer>
+        </footer>
 </body>
 
 </html>
