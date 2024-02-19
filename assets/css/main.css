@@ -2,9 +2,6 @@
     --dark-background-colour: rgb(36, 36, 36);
 }
 
-/*
-fade in bullshit
-*/
 #caption {
     width: 100%;
     overflow: hidden;
@@ -184,6 +181,7 @@ main section
         opacity: 0;
         transform: translateX(-100%);
     }
+
     17.85% {
         opacity: 1;
         transform: translateX(0);
@@ -322,9 +320,6 @@ skills section
     animation: boing-boing 2s linear infinite;
 }
 
-/*
-sine wave mock fuckery
-*/
 @keyframes boing-boing {
 
     0%,
@@ -392,6 +387,7 @@ projects section
         width: 13rem;
         height: 13rem;
     }
+
     .card:hover {
         width: 16rem;
         height: 28rem;
@@ -477,8 +473,10 @@ input#name {
 }
 
 /* When the input field is focused */
-input#name:focus, input[type="email"]:focus, textarea:focus {
-    border-color: #0f0; /* Change border color to green */
+input#name:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #0f0;
 }
 
 
@@ -498,6 +496,7 @@ textarea {
 
 
 @media (max-width: 767) {
+
     input#name,
     input[type="text"],
     textarea {
